@@ -307,35 +307,6 @@ function Navbar() {
               </motion.div>
             )}
           </div>
-
-          {/* Hamburger Menu */}
-          <button 
-            onClick={() => setIsOpen(!isOpen)}
-            style={{
-              background: 'none',
-              border: 'none',
-              color: 'white',
-              cursor: 'pointer',
-              padding: '5px',
-              zIndex: 1001
-            }}
-          >
-            <motion.div
-              animate={{ rotate: isOpen ? 45 : 0, y: isOpen ? 8 : 0 }}
-              transition={{ duration: 0.2 }}
-              style={{ height: '2px', width: '24px', backgroundColor: 'white', marginBottom: '6px' }}
-            />
-            <motion.div
-              animate={{ opacity: isOpen ? 0 : 1 }}
-              transition={{ duration: 0.2 }}
-              style={{ height: '2px', width: '24px', backgroundColor: 'white', marginBottom: '6px' }}
-            />
-            <motion.div
-              animate={{ rotate: isOpen ? -45 : 0, y: isOpen ? -8 : 0 }}
-              transition={{ duration: 0.2 }}
-              style={{ height: '2px', width: '24px', backgroundColor: 'white' }}
-            />
-          </button>
         </div>
       )}
       
