@@ -310,70 +310,7 @@ function Navbar() {
         </div>
       )}
       
-      {/* Desktop Navigation Links */}
-      {!isMobile && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          style={{
-            display: 'flex',
-            gap: '25px',
-            alignItems: 'center'
-          }}
-        >
-          {['Notes', 'Papers', 'Contact'].map((item, index) => {
-            // Map items to their correct routes
-            const getItemRoute = (item) => {
-              switch(item) {
-                case 'Notes': return '/subject-notes';
-                case 'Papers': return '/question-papers';
-                case 'Contact': return '/contact';
-                default: return `/${item.toLowerCase()}`;
-              }
-            };
-            
-            return (
-              <Link
-                key={item}
-                to={getItemRoute(item)}
-                style={{
-                  color: '#ffffff',
-                  textDecoration: 'none',
-                  fontWeight: '500',
-                  fontSize: '16px',
-                  transition: 'all 0.3s ease',
-                  position: 'relative',
-                  padding: '5px 0'
-                }}
-              >
-                <motion.span
-                  whileHover={{
-                    color: '#3b82f6'
-                  }}
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: 0.3 + (index * 0.1) }}
-                >
-                  {item}
-                  <motion.div
-                    style={{
-                      position: 'absolute',
-                      bottom: 0,
-                      left: 0,
-                      right: 0,
-                      height: '2px',
-                      background: '#3b82f6',
-                      transformOrigin: 'left',
-                      scaleX: 0
-                    }}
-                    whileHover={{ scaleX: 1 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                </motion.span>
-              </Link>
-            );
-          })}
+    
           
           {/* Profile Circle */}
           <div className="profile-menu-container" style={{ position: 'relative' }}>
